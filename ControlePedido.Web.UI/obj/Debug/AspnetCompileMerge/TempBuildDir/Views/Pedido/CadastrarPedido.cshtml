@@ -1,0 +1,92 @@
+﻿@model ControlePedidos.Aplicacao.ViewModels.PedidoViewModel
+
+@{
+    ViewBag.Title = "CadastrarPedido";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CadastrarPedido</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-md-12">
+                <div class="box">
+                    <div class=" box-header with-border">
+                        <h3 class="box-title">Cadastrar Pedido</h3>
+                    </div>
+                    <div class="form-horizontal col-md-11">
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                <label for="Nome" class="control-label col-md-2">Codigo cliente</label>
+                                <div class="col-md-2">
+                                    @Html.TextBoxFor(model => model.ClienteId, new { @class = "form-control input-lg", @placeholder = "codigo", @id = "txtCodCliene" })
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#" class="btn btn-lg btn-success"><i class="glyphicon glyphicon-plus"></i></a>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(model => model.NomeCliente, new { @class = "form-control input-lg", @placeholder = "Nome cliente", @id = "txtNomeCliene" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Nome" class="control-label col-md-2">Codigo produto</label>
+                                <div class="col-md-2">
+                                    @Html.TextBoxFor(model => model.ProdutoId, new { @class = "form-control input-lg", @placeholder = "Codigo", @id = "txtCodigoProduto" })
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#" class="btn btn-lg btn-success"><i class="glyphicon glyphicon-plus"></i></a>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(model => model.NomeProduto, new { @class = "form-control input-lg", @placeHolder = "Produto", @id = "txtNomeProduto" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <div class="col-md-offset-2 col-md-10">
+                            <a href="#" class="btn btn-lg btn-success" onclick="AddTableRow()"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add Produto</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover" id="tbProduto">
+                            <thead>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>QTD</th>
+                                    <th>Preço</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" style="text-align: left;">
+                                        <button onclick="ListarTabela()" type="button" class="btn btn-info">Adicionar Produto</button>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/Pedido/Pedidos.js"></script>

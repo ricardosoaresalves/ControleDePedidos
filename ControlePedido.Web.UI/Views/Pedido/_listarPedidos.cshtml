@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ControlePedidos.Aplicacao.ViewModels.PedidoViewModel>
+
+<p>
+
+</p>
+<div class="row ">
+    <div class="box col-md-11">
+        <div class="box-header with-border">
+            <h3 class="box-title">Pedidos</h3>
+        </div>
+        <div class="box-body table-responsive no-padding">
+            <div class="col-md-offset-1 col-md-10">
+
+                @if (Model.Count() == 0)
+                {
+                    <div class="alert alert-info  alert-dismissable">
+                        <i class="fa fa-info"></i>
+                        <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                        Não existe itens para este pedido
+                    </div>
+                }
+                else
+                {
+                    <table class="table table-hover">
+                        <tr>
+                            <th>
+                                Cliente
+                            </th>
+                            <th>
+                                Data da compra
+                            </th>
+                            <th>
+                                Data da entrega
+                            </th>
+                            <th>
+                                Frete
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.HiddenFor(modelItem => item.PedidoId)
+                                    @Html.DisplayFor(modelItem => item.NomeCliente)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataCompra)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataEntrega)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Frete)
+                                </td>
+                                <td>
+                                    <a href="#" data-id="@item.PedidoId" id="lnkPedido" class="detalhe" title="Detalhes"><i class="glyphicon glyphicon-list-alt"></i> Detalhes</a>|
+                                    <a href="#" data-nome="@item.NomeCliente" data-id="@item.PedidoId" id="lnkPedido" class="Exclui" title="Excluir"><i class="glyphicon glyphicon-trash"></i> Excluir</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                }
+                
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("_modal")
+@Html.Partial("_excluirModal")

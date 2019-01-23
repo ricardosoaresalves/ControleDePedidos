@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ControlePedidos.Aplicacao.ViewModels.ClienteViewModel>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nome)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nome)
+                                    @Html.HiddenFor(modelItem => item.ClienteId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+
+                                <td>
+                                    <a href="#" data-id="@item.ClienteId" data-nome="@item.Nome" id="lnkDetalhe" class="btn btn-lg btn-primary clicar">selecionar</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

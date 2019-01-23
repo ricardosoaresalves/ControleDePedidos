@@ -1,0 +1,67 @@
+﻿@model  IEnumerable<ControlePedidos.Aplicacao.ViewModels.ClienteViewModel>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nome)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Cep)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Bairro)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CidadeNome)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nome)
+                                    @Html.HiddenFor(modelItem => item.ClienteId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cep)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Bairro)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CidadeNome)
+                                </td>
+
+                                <td>
+                                    @Html.ActionLink("Editar |", "EditarCliente", new { id = item.ClienteId })
+
+                                    <a href="#" data-id="@item.ClienteId" data-nome="@item.Nome" id="lnkDetalhe" class="detalhe">Detalhes</a> |
+                                    <a href="#" data-id="@item.ClienteId" data-nome="@item.Nome" id="lnkExcluir" class="excluir">Excluir</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

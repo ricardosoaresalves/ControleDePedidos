@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ControlePedidos.Aplicacao.ViewModels.ProdutoViewModel>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="#" data-id="@item.ProdutoId" id="lnkResultBusca" data-nome="@item.NomeProduto" data-preco="@item.Preco" class="clicar">@Html.DisplayFor(modelItem => item.NomeProduto)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+            </tr>
+        }
+    }
+</table>
+<script src="~/Scripts/Orcamento/BuscaProdutoOrcamento.js"></script>

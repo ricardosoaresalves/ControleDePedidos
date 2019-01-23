@@ -1,0 +1,78 @@
+﻿/*Classe para parecer um A4 Rs' remova*/
+/*
+.table-wrap{
+  max-width:990px;
+  margin:auto;
+    
+}
+    */
+/*Classe para parecer um A4 Rs' remova*/
+.table  {
+		border-collapse:collapse;
+		border-spacing:0;
+		width: 100%
+
+	}
+	.table td{
+		font-family:Arial, sans-serif;
+		font-size:14px;
+		padding:20px 5px;
+		border-style:solid;
+		border-width:1px;
+		overflow:hidden;
+		word-break:normal;
+
+	}
+	.table th{
+		font-family:Arial, sans-serif;
+		font-size:14px;
+		font-weight:normal;
+		padding:3px 5px;
+		border-style:solid;
+		border-width:1px;
+		overflow:hidden;
+		word-break:normal;
+		background-color:#efefef
+	}
+	.table .nomeCampo{
+		font-weight:bold;
+		font-family:"Times New Roman", Times, serif !important;
+		background-color:#efefef;
+		text-align:center;
+		vertical-align:top
+	}
+	.table .valorCampo{
+		text-align:center;
+		vertical-align:top;
+		padding: 
+	}
+	.table .campoCinza{
+		background-color:#efefef;
+		vertical-align:top
+	}
+	.table .modulos{
+		font-weight:bold;
+		font-size:11px;
+		font-family:"Times New Roman", Times, serif !important;
+
+		background-color:#ffffff;
+		vertical-align:top;
+		padding-bottom: 3px;
+		border: 0;
+	}
+	@media screen and (max-width: 767px) {
+		.table {
+			width: auto !important;
+
+		}
+		.table col {
+			width: auto !important;
+
+		}
+		.table-wrap {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+
+		}
+	}
+

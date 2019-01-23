@@ -1,0 +1,18 @@
+﻿@model ControlePedidos.Aplicacao.ViewModels.ClienteViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    <div class="row">
+        <div id="lstClientes"></div>
+    </div>
+
+    @Html.Partial("_excluirClienteModal")
+    @Html.Partial("_detalhesModal")
+
+</p>
+<script src="~/Scripts/cliente/lstClientes.js"></script>

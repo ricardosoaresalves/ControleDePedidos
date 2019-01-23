@@ -1,0 +1,113 @@
+﻿@model ControlePedidos.Aplicacao.ViewModels.OrcamentoViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("CadastrarOrcamento", "Orcamento", null, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="form-horizontal col-md-11">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-md-11">
+                <div class="box box-primary">
+                    <div class=" box-header with-border">
+                        <h3 class="box-title">Cadastrar Orçamento</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.NomeCliente, new { @class = "form-control input-lg", @placeholder = "Nome", @id = "txtNomeCliente", @autofocus = "autofocus" })
+                                @Html.ValidationMessageFor(model => model.NomeCliente, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control input-lg", @placeholder = "E-mail", @id = "txtemail" })
+                            </div>
+                            <div class="col-md-5">
+                                @Html.TextBoxFor(model => model.CPF, new { @class = "form-control input-lg", @placeholder = "CPF", @id = "txtCPF" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                @Html.TextBoxFor(model => model.Celular, new { @class = "form-control input-lg", @placeholder = "Celular", @id = "txtCelular" })
+                            </div>
+                            <div class="col-md-5">
+                                @Html.TextBoxFor(model => model.TelFixo, new { @class = "form-control input-lg", @placeholder = "Telefone fixo", @id = "txtFixo" })
+                            </div>
+                        </div>
+                        <div class="form-group">                        
+                            <div class="col-md-7">
+                                <input type="text" id="txtResultProduto" class="form-control input-lg" placeholder="Digite o nome do produto"/> 
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" id="btnBuscaProduto" class="btn btn-lg btn-success" data-toggle="tooltip" data-placement="top" title="Buscar produto"><i class="glyphicon glyphicon-search"></i>&nbsp;Buscar Produto</a>
+                            </div>                            
+                        </div>
+                        <div class="form-group">                          
+                            <div class="col-md-2">
+                                <input type="text" id="txtQTD" class="form-control input-lg" placeholder="QTD" />
+                            </div>                            
+                            <div class="col-md-2">
+                                <a href="#" class="btn btn-lg btn-success" onclick="AddTableRow(this); HabilitaDiv(); ValorTotalProdutos();" type="button"><i class="glyphicon glyphicon-plus"></i> Produto</a>
+                            </div>
+
+                        </div>
+                        <div class="form-group" id="dvTabProdutos">                            
+                            <div class="col-md-10">                                
+                                <div class="table-responsive">
+                                    <table id="products-table" class="table table-hover table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <th>Produto</th>                                                
+                                                <th>Quantidade</th>
+                                                <th>Preço</th>                                            
+                                                <th></th>
+                                            </tr>                                            
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="5" style="text-align: left;">
+                                                   <div class="col-md-8" id="divFooter">Total: <span id="spTotal"></span></div>                                                                                                        
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        @Html.HiddenFor(model => model.ProdutoId, new { @id = "hdnProdutoId" })                        
+                        @Html.HiddenFor(model=> model.ValorProduto, new {@id = "hdnPreco" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-footer">
+        <div class="col-md-offset-4 col-md-10">
+            <a class="btn btn-danger btn-lg" href="@Url.Action("Index","Processo")">Cancelar</a>
+            <input type="submit" value="Salvar" class="btn btn-primary btn-lg" />
+        </div>
+    </div>
+
+
+
+}
+
+@Html.Partial("_modalBuscaProduto")
+@Html.Partial("BuscarProduto")
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/Orcamento/cadastrarOrcamento.js"></script>

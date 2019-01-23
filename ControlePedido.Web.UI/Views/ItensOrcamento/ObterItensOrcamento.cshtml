@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ControlePedidos.Aplicacao.ViewModels.ItemOrcamentoViewModel>
+
+<p>
+    Itens
+</p>
+<div class="box">
+    <div class="box-body table-responsive no-padding">
+        <table class="table table-bordered" id="tbItemPedido">
+            <thead>
+                <tr>
+                    <th>
+                        Produto
+                    </th>
+                    <th>
+                        Qtd
+                    </th>
+                    <th>
+                        Preço - (R$)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NomeItem)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Qtd)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Valor)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" style="text-align: left;">
+                        <div class="col-md-8" id="divFooter">Total: <span id="spTotal"></span></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

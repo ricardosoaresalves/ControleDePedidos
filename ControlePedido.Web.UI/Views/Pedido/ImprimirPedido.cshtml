@@ -1,0 +1,94 @@
+﻿@model ControlePedidos.Aplicacao.ViewModels.PedidoViewModel
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Imprimir</title>
+</head>
+<body>
+    <div class="row">
+        <div class="box">
+            <div class="box-header with-border">
+                <h3 class="box-title">Detalhes do cliente</h3>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Cliente
+                                </th>
+                                <th>
+                                    Celular
+                                </th>
+                                <th>
+                                    E-mail
+                                </th>
+                                <th>
+                                    Data de Compra
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(model => model.NomeCliente)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Cliente.Celular)
+                                </td>
+                                <td></td>
+                                <td>
+                                    @Html.DisplayFor(model => model.DataCompra)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <strong>Endereço</strong>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Rua
+                                </th>
+                                <th>
+                                    Complemento
+                                </th>
+                                <th>
+                                    Bairro
+                                </th>
+                                <th>
+                                    Cidade
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(model => model.Cliente.Rua)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Cliente.Complemento)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Cliente.Bairro)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Cliente.CidadeNome)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <strong>Itens do pedido</strong>
+                    <div id="dvItens">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

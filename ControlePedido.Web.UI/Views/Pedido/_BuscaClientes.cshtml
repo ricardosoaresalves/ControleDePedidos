@@ -1,0 +1,61 @@
+﻿@model  IEnumerable<ControlePedidos.Aplicacao.ViewModels.ClienteViewModel>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th>
+                                Nome
+                            </th>
+                            <th>
+                                Bairro
+                            </th>
+                            <th>
+                                Cidade
+                            </th>
+                            <th>
+                                Rua
+                            </th>
+                            <th>
+                                Complemento
+                            </th>
+                        </tr>
+                    </tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="#" id="lnkNomeCliente" onclick="obter();" data-nome="@item.Nome" data-bairro="@item.Bairro"
+                                       data-cidade="@item.CidadeNome" data-Rua="@item.Rua" data-comp="@item.Complemento"
+                                       class="selecionar" data-id="@item.ClienteId">@Html.DisplayFor(modelItem => item.Nome)</a>
+                                    @Html.HiddenFor(modelItem => item.ClienteId, new { @id = "hdnClienteId" })
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Bairro)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CidadeNome)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Rua)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Complemento)
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Pedido/buscaPedido.js"></script>
+<script src="~/Scripts/Pedido/ObterCliente.js"></script>

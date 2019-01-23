@@ -1,0 +1,143 @@
+﻿@model ControlePedidos.Aplicacao.ViewModels.PedidoViewModel
+
+@{
+    ViewBag.Title = "IncluirPedido";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>IncluirPedido</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Cadastrar Pedido</h3>
+                </div>
+                <div class="form-horizontal col-md-offset-1 col-md-10">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <div class="col-md-7">
+                                <input autofocus="autofocus" class="form-control input-lg" id="txtNome" name="NomeCliente" placeholder="Nome" type="text" value="" autocomplete="off">
+                                @Html.HiddenFor(model => model.ClienteId, new { @id = "hdnClienteId" })
+                                <input type="hidden" id="hdnProdutoId" />
+                                <input type="hidden" id="hdnPreco" />
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" id="btnBuscaCliente" class="btn btn-lg btn-success" data-toggle="tooltip" data-placement="top" title="Buscar cliente"><i class="glyphicon glyphicon-search"></i>&nbsp;Buscar Cliente</a>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <input class="form-control input-lg" id="txtCidade" name="Cidade" placeholder="Cidade" type="text" value="" autocomplete="off">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control input-lg" id="txtBairro" name="Bairro" placeholder="Bairro" type="text" value="" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <input class="form-control input-lg" id="txtLogradouro" name="Rua" placeholder="(Rua, Trav, Av..)" type="text" value="" autocomplete="off">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control input-lg" id="txtNumero" name="Complemento" placeholder="Número, lote, quadra" type="text" value="" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    @Html.TextBoxFor(model => model.DataEntrega, new { @class = "form-control input-lg", @placeholder = "Data de entrega", @id = "datepicker", @Type = "date" })
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                @Html.TextBoxFor(model => model.Frete, new { @class = "form-control input-lg", @placeholder = "Frete", @id = "txtFrete", @autocomplete = "off", @onKeyup = "formatarMoeda(this);" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <input type="text" id="txtResultProduto" class="form-control input-lg" placeholder="Digite o nome do produto" autocomplete="off" />
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" id="btnBuscaProduto" class="btn btn-lg btn-success" data-toggle="tooltip" data-placement="top" title="Buscar produto"><i class="glyphicon glyphicon-search"></i>&nbsp;Buscar Produto</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <input type="text" id="txtPreco" class="form-control input-lg" disabled />
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" id="txtDesconto" class="form-control input-lg" autocomplete="off" placeholder="desconto(%)" onkeyup="formatarMoeda(this);" />
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" id="txtTotal" class="form-control input-lg" disabled />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <input type="text" id="txtQTD" class="form-control input-lg" placeholder="QTD" autocomplete="off" />
+                            </div>
+                            <div class="col-md-2">
+                                <a href="#" class="btn btn-lg btn-success" onclick="AddTableRow(this);" type="button"><i class="glyphicon glyphicon-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                </div>
+            </div>
+
+            <div id="dvTabProdutos">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Itens do Pedido</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-horizontal col-md-offset-1 col-md-10">
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <div class="box-body table-responsive no-padding">
+                                        <table id="products-table" class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Produto</th>
+                                                    <th>QTD</th>
+                                                    <th>Preço</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="5" style="text-align: left;">
+                                                        <div class="col-md-8" id="divFooter">Total: <span id="spTotal"></span></div>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a href="#" class="btn btn-lg btn-success" id="btnSalvarPedido" type="button"><i class="glyphicon glyphicon-floppy-save"></i> Salvar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@Html.Partial("_modal")
+@Html.Partial("_modalMensagem")
+<script src="~/Scripts/Pedido/IncluirPedido.js"></script>
