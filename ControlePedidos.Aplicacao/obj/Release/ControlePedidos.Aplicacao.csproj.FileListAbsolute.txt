@@ -1,0 +1,14 @@
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\ControlePedidos.Aplicacao.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\ControlePedidos.Aplicacao.pdb
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\AutoMapper.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\AutoMapper.Net4.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\ControlePedidos.Data.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\ControlePedidos.Dominio.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\Microsoft.Practices.ServiceLocation.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\EntityFramework.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\ControlePedidos.Data.pdb
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\ControlePedidos.Dominio.pdb
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\bin\Release\EntityFramework.xml
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\obj\Release\ControlePedidos.Aplicacao.csprojResolveAssemblyReference.cache
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\obj\Release\ControlePedidos.Aplicacao.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Aplicacao\obj\Release\ControlePedidos.Aplicacao.pdb

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9F19146-7A32-443F-8CE0-BF65326623E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ControlePedidos.Aplicacao</RootNamespace>
+    <AssemblyName>ControlePedidos.Aplicacao</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\GestaoProcessoImobiliaria\GestaoProcesso.Aplicacao\bin\Debug\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\..\..\GestaoProcessoImobiliaria\GestaoProcesso.Aplicacao\bin\Debug\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\ControlePedidos.Data\bin\Debug\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="CidadeAppServico.cs" />
+    <Compile Include="ClienteAppServico.cs" />
+    <Compile Include="EnderecoAppService.cs" />
+    <Compile Include="EstadoAppServico.cs" />
+    <Compile Include="Interface\ICidadeAppServico.cs" />
+    <Compile Include="Interface\IClienteAppServico.cs" />
+    <Compile Include="Interface\IEnderecoAppServico.cs" />
+    <Compile Include="Interface\IEstadoAppServico.cs" />
+    <Compile Include="Interface\IItemOrcamentoAppServico.cs" />
+    <Compile Include="Interface\IItemPedidoAppServico.cs" />
+    <Compile Include="Interface\IOrcamentoAppServico.cs" />
+    <Compile Include="Interface\IPedidoAppServico.cs" />
+    <Compile Include="Interface\IProdutoAppServico.cs" />
+    <Compile Include="ItemOrcamentoAppServico.cs" />
+    <Compile Include="ItemPedidoAppServico.cs" />
+    <Compile Include="OrcamentoAppServico.cs" />
+    <Compile Include="PedidoAppServico.cs" />
+    <Compile Include="ProdutoAppServico.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CidadeViewModel.cs" />
+    <Compile Include="ViewModels\ClienteViewModel.cs" />
+    <Compile Include="ViewModels\EnderecoViewModel.cs" />
+    <Compile Include="ViewModels\EstadoViewModel.cs" />
+    <Compile Include="ViewModels\ItemOrcamentoViewModel.cs" />
+    <Compile Include="ViewModels\ItemPedidoViewModel.cs" />
+    <Compile Include="ViewModels\OrcamentoViewModel.cs" />
+    <Compile Include="ViewModels\PedidoViewModel.cs" />
+    <Compile Include="ViewModels\ProdutoViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlePedidos.Data\ControlePedidos.Infra.Data.csproj">
+      <Project>{DA80245D-2A00-47A9-8030-1474AEDFE888}</Project>
+      <Name>ControlePedidos.Infra.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlePedidos.Dominio\ControlePedidos.Dominio.csproj">
+      <Project>{4987824F-F6ED-40B4-AC59-337BD65D64C9}</Project>
+      <Name>ControlePedidos.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
