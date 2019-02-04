@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA80245D-2A00-47A9-8030-1474AEDFE888}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ControlePedidos.Data</RootNamespace>
+    <AssemblyName>ControlePedidos.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Globalization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexto\ControlePedidoContexto.cs" />
+    <Compile Include="Contexto\GerenciadorContexto.cs" />
+    <Compile Include="EntityConfig\CidadeConfig.cs" />
+    <Compile Include="EntityConfig\ClienteConfig.cs" />
+    <Compile Include="EntityConfig\EnderecoConfig.cs" />
+    <Compile Include="EntityConfig\EstadoConfig.cs" />
+    <Compile Include="EntityConfig\ItemDoOrcamentoConfig.cs" />
+    <Compile Include="EntityConfig\ItemPedidoConfig.cs" />
+    <Compile Include="EntityConfig\NovoPedidoConfig.cs" />
+    <Compile Include="EntityConfig\OrcamentoConfig.cs" />
+    <Compile Include="EntityConfig\ProdutoConfig.cs" />
+    <Compile Include="Interfaces\IContextManager.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Migrations\201712312121049_CriandoBase.cs" />
+    <Compile Include="Migrations\201712312121049_CriandoBase.Designer.cs">
+      <DependentUpon>201712312121049_CriandoBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802042325263_atualizar_produto.cs" />
+    <Compile Include="Migrations\201802042325263_atualizar_produto.Designer.cs">
+      <DependentUpon>201802042325263_atualizar_produto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802060053429_remodelagem_da_base_tabela_item_pedido.cs" />
+    <Compile Include="Migrations\201802060053429_remodelagem_da_base_tabela_item_pedido.Designer.cs">
+      <DependentUpon>201802060053429_remodelagem_da_base_tabela_item_pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802171813556_Tabela_Orcamento.cs" />
+    <Compile Include="Migrations\201802171813556_Tabela_Orcamento.Designer.cs">
+      <DependentUpon>201802171813556_Tabela_Orcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803182006205_atualiza_tab_orcamento.cs" />
+    <Compile Include="Migrations\201803182006205_atualiza_tab_orcamento.Designer.cs">
+      <DependentUpon>201803182006205_atualiza_tab_orcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804060137331_nova_Tabela_Item_Orcamento.cs" />
+    <Compile Include="Migrations\201804060137331_nova_Tabela_Item_Orcamento.Designer.cs">
+      <DependentUpon>201804060137331_nova_Tabela_Item_Orcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804071926549_atualiza_tbClientes.cs" />
+    <Compile Include="Migrations\201804071926549_atualiza_tbClientes.Designer.cs">
+      <DependentUpon>201804071926549_atualiza_tbClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804090437400_atualizaTab_ItemOrcamento.cs" />
+    <Compile Include="Migrations\201804090437400_atualizaTab_ItemOrcamento.Designer.cs">
+      <DependentUpon>201804090437400_atualizaTab_ItemOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804090522132_UpdateTab_ItemOrcamento.cs" />
+    <Compile Include="Migrations\201804090522132_UpdateTab_ItemOrcamento.Designer.cs">
+      <DependentUpon>201804090522132_UpdateTab_ItemOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804130004553_tab_ItemPedido_E_Pedido.cs" />
+    <Compile Include="Migrations\201804130004553_tab_ItemPedido_E_Pedido.Designer.cs">
+      <DependentUpon>201804130004553_tab_ItemPedido_E_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804130013503_atualizacao_tab_itens_pedidos.cs" />
+    <Compile Include="Migrations\201804130013503_atualizacao_tab_itens_pedidos.Designer.cs">
+      <DependentUpon>201804130013503_atualizacao_tab_itens_pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804130030587_atualizacao_tb_item_pedidos.cs" />
+    <Compile Include="Migrations\201804130030587_atualizacao_tb_item_pedidos.Designer.cs">
+      <DependentUpon>201804130030587_atualizacao_tb_item_pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804130223438_atualiza_tb_itens_Pedido.cs" />
+    <Compile Include="Migrations\201804130223438_atualiza_tb_itens_Pedido.Designer.cs">
+      <DependentUpon>201804130223438_atualiza_tb_itens_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804130225550_atualiza_tb_itens_Pedido1.cs" />
+    <Compile Include="Migrations\201804130225550_atualiza_tb_itens_Pedido1.Designer.cs">
+      <DependentUpon>201804130225550_atualiza_tb_itens_Pedido1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804130550014_atualiza_tb_pedido_e_item_pedido.cs" />
+    <Compile Include="Migrations\201804130550014_atualiza_tb_pedido_e_item_pedido.Designer.cs">
+      <DependentUpon>201804130550014_atualiza_tb_pedido_e_item_pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804131153039_drop_Pedido.cs" />
+    <Compile Include="Migrations\201804131153039_drop_Pedido.Designer.cs">
+      <DependentUpon>201804131153039_drop_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804131232101_cria_tabela_novo_pedido.cs" />
+    <Compile Include="Migrations\201804131232101_cria_tabela_novo_pedido.Designer.cs">
+      <DependentUpon>201804131232101_cria_tabela_novo_pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804131238446_colun_clienteId_NovoPedido.cs" />
+    <Compile Include="Migrations\201804131238446_colun_clienteId_NovoPedido.Designer.cs">
+      <DependentUpon>201804131238446_colun_clienteId_NovoPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804131333287_pedido_ID_ITEM_PEDIDO.cs" />
+    <Compile Include="Migrations\201804131333287_pedido_ID_ITEM_PEDIDO.Designer.cs">
+      <DependentUpon>201804131333287_pedido_ID_ITEM_PEDIDO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804161904504_atualiza_tb_produtos.cs" />
+    <Compile Include="Migrations\201804161904504_atualiza_tb_produtos.Designer.cs">
+      <DependentUpon>201804161904504_atualiza_tb_produtos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804202234358_NovoPedido_Desconto.cs" />
+    <Compile Include="Migrations\201804202234358_NovoPedido_Desconto.Designer.cs">
+      <DependentUpon>201804202234358_NovoPedido_Desconto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804210050387_novoPedido_Alt_Desconto.cs" />
+    <Compile Include="Migrations\201804210050387_novoPedido_Alt_Desconto.Designer.cs">
+      <DependentUpon>201804210050387_novoPedido_Alt_Desconto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804211128452_correcao_tab_endereco.cs" />
+    <Compile Include="Migrations\201804211128452_correcao_tab_endereco.Designer.cs">
+      <DependentUpon>201804211128452_correcao_tab_endereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804211138428_correcao_relacionamento_cliente-endereco.cs" />
+    <Compile Include="Migrations\201804211138428_correcao_relacionamento_cliente-endereco.Designer.cs">
+      <DependentUpon>201804211138428_correcao_relacionamento_cliente-endereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805020018437_ad_referencia_cliente.cs" />
+    <Compile Include="Migrations\201805020018437_ad_referencia_cliente.Designer.cs">
+      <DependentUpon>201805020018437_ad_referencia_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805022206432_atualiza_tab_cliente.cs" />
+    <Compile Include="Migrations\201805022206432_atualiza_tab_cliente.Designer.cs">
+      <DependentUpon>201805022206432_atualiza_tab_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\CidadeRepositorio.cs" />
+    <Compile Include="Repositorios\ClienteRepositorio.cs" />
+    <Compile Include="Repositorios\EnderecoRepositorio.cs" />
+    <Compile Include="Repositorios\EstadoRepositorio.cs" />
+    <Compile Include="Repositorios\ItemOrcamentoRepositorio.cs" />
+    <Compile Include="Repositorios\ItemPedidoRepositorio.cs" />
+    <Compile Include="Repositorios\OrcamentoRepositorio.cs" />
+    <Compile Include="Repositorios\PedidoRepositorio.cs" />
+    <Compile Include="Repositorios\ProdutoRepositorio.cs" />
+    <Compile Include="Repositorios\RepositorioBase.cs" />
+    <Compile Include="UoW\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlePedidos.Dominio\ControlePedidos.Dominio.csproj">
+      <Project>{4987824f-f6ed-40b4-ac59-337bd65d64c9}</Project>
+      <Name>ControlePedidos.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712312121049_CriandoBase.resx">
+      <DependentUpon>201712312121049_CriandoBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802042325263_atualizar_produto.resx">
+      <DependentUpon>201802042325263_atualizar_produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802060053429_remodelagem_da_base_tabela_item_pedido.resx">
+      <DependentUpon>201802060053429_remodelagem_da_base_tabela_item_pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802171813556_Tabela_Orcamento.resx">
+      <DependentUpon>201802171813556_Tabela_Orcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803182006205_atualiza_tab_orcamento.resx">
+      <DependentUpon>201803182006205_atualiza_tab_orcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804060137331_nova_Tabela_Item_Orcamento.resx">
+      <DependentUpon>201804060137331_nova_Tabela_Item_Orcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804071926549_atualiza_tbClientes.resx">
+      <DependentUpon>201804071926549_atualiza_tbClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804090437400_atualizaTab_ItemOrcamento.resx">
+      <DependentUpon>201804090437400_atualizaTab_ItemOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804090522132_UpdateTab_ItemOrcamento.resx">
+      <DependentUpon>201804090522132_UpdateTab_ItemOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804130004553_tab_ItemPedido_E_Pedido.resx">
+      <DependentUpon>201804130004553_tab_ItemPedido_E_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804130013503_atualizacao_tab_itens_pedidos.resx">
+      <DependentUpon>201804130013503_atualizacao_tab_itens_pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804130030587_atualizacao_tb_item_pedidos.resx">
+      <DependentUpon>201804130030587_atualizacao_tb_item_pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804130223438_atualiza_tb_itens_Pedido.resx">
+      <DependentUpon>201804130223438_atualiza_tb_itens_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804130225550_atualiza_tb_itens_Pedido1.resx">
+      <DependentUpon>201804130225550_atualiza_tb_itens_Pedido1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804130550014_atualiza_tb_pedido_e_item_pedido.resx">
+      <DependentUpon>201804130550014_atualiza_tb_pedido_e_item_pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804131153039_drop_Pedido.resx">
+      <DependentUpon>201804131153039_drop_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804131232101_cria_tabela_novo_pedido.resx">
+      <DependentUpon>201804131232101_cria_tabela_novo_pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804131238446_colun_clienteId_NovoPedido.resx">
+      <DependentUpon>201804131238446_colun_clienteId_NovoPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804131333287_pedido_ID_ITEM_PEDIDO.resx">
+      <DependentUpon>201804131333287_pedido_ID_ITEM_PEDIDO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804161904504_atualiza_tb_produtos.resx">
+      <DependentUpon>201804161904504_atualiza_tb_produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804202234358_NovoPedido_Desconto.resx">
+      <DependentUpon>201804202234358_NovoPedido_Desconto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804210050387_novoPedido_Alt_Desconto.resx">
+      <DependentUpon>201804210050387_novoPedido_Alt_Desconto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804211128452_correcao_tab_endereco.resx">
+      <DependentUpon>201804211128452_correcao_tab_endereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804211138428_correcao_relacionamento_cliente-endereco.resx">
+      <DependentUpon>201804211138428_correcao_relacionamento_cliente-endereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805020018437_ad_referencia_cliente.resx">
+      <DependentUpon>201805020018437_ad_referencia_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805022206432_atualiza_tab_cliente.resx">
+      <DependentUpon>201805022206432_atualiza_tab_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
