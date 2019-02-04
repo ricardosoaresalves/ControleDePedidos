@@ -1,0 +1,5 @@
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Dominio\bin\Release\ControlePedidos.Dominio.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Dominio\bin\Release\ControlePedidos.Dominio.pdb
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Dominio\obj\Release\ControlePedidos.Dominio.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Dominio\obj\Release\ControlePedidos.Dominio.pdb
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Dominio\obj\Release\ControlePedidos.Dominio.csprojResolveAssemblyReference.cache

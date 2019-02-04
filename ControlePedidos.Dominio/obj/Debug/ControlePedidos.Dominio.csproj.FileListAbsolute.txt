@@ -1,0 +1,4 @@
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Dominio\bin\Debug\ControlePedidos.Dominio.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Dominio\bin\Debug\ControlePedidos.Dominio.pdb
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Dominio\obj\Debug\ControlePedidos.Dominio.dll
+D:\Projetos\Controle de pedido\ControlePedido\ControlePedidos.Dominio\obj\Debug\ControlePedidos.Dominio.pdb
